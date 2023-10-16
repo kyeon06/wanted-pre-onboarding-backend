@@ -1,7 +1,7 @@
 from rest_framework.response import Response
-from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView, RetrieveAPIView
 from recuritment.models import Recuritment
-from recuritment.serializers import RecuritmentCreateSerializer, RecuritmentListSerializer, RecuritmentSerializer, RecuritmentUpdateSerializer
+from recuritment.serializers import RecuritmentCreateSerializer, RecuritmentDetialSerializer, RecuritmentListSerializer, RecuritmentSerializer, RecuritmentUpdateSerializer
 from django.shortcuts import get_object_or_404
 
 """ 채용공고 목록 조회 """
@@ -23,3 +23,7 @@ class RecuritmentUpdateAPIView(RetrieveUpdateAPIView):
 class RecuritmentDestroyAPIView(RetrieveDestroyAPIView):
     queryset = Recuritment.objects.all()
     serializer_class = RecuritmentSerializer
+
+class RecuritmentDetailAPIView(RetrieveAPIView):
+    queryset = Recuritment.objects.all()
+    serializer_class = RecuritmentDetialSerializer
