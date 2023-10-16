@@ -47,11 +47,16 @@ class Member(AbstractBaseUser):
     def __str__(self):
         return f"email: {self.email} / username: {self.username}"
 
-    def has_perms(self, perm, obj=None):
+    # django
+    def has_perm(self, perm, obj=None):
         """
         - 로그인 사용자의 특정 테이블의 crud 권한을 설정, perm table의 crud 권한이 들어간다.
         - admin일 경우 항상 True, 비활성 사용자(is_active=False)의 경우 항상 False
         """
+        return True
+    
+    # djangorestframework    
+    def has_perms(self, perm, obj=None):
         return True
 
     def has_module_perms(self, app_label):
