@@ -1,5 +1,5 @@
 from rest_framework.response import Response
-from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView
 from recuritment.models import Recuritment
 from recuritment.serializers import RecuritmentCreateSerializer, RecuritmentListSerializer, RecuritmentSerializer, RecuritmentUpdateSerializer
 from django.shortcuts import get_object_or_404
@@ -15,10 +15,11 @@ class RecuritmentCreateAPIView(CreateAPIView):
     serializer_class = RecuritmentCreateSerializer
 
 """ 채용공고 수정 """
-class RecuritmentUpdateAPIView(UpdateAPIView):
+class RecuritmentUpdateAPIView(RetrieveUpdateAPIView):
     queryset = Recuritment.objects.all()
     serializer_class = RecuritmentUpdateSerializer
 
-class RecuritmentDestroyAPIView(DestroyAPIView):
+""" 채용공고 삭제 """
+class RecuritmentDestroyAPIView(RetrieveDestroyAPIView):
     queryset = Recuritment.objects.all()
     serializer_class = RecuritmentSerializer
