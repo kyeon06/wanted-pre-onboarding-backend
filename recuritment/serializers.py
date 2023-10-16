@@ -23,3 +23,9 @@ class RecuritmentCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recuritment
         fields = ("company", "position", "compensation", "contents", "tech")
+
+""" 채용공고 수정 Serializer """
+class RecuritmentUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Recuritment
+        fields = ("position", "compensation", "contents", "tech")
