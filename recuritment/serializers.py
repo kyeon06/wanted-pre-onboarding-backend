@@ -29,3 +29,8 @@ class RecuritmentUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recuritment
         fields = ("position", "compensation", "contents", "tech")
+
+class RecuritmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Recuritment
+        fields = '__all__'
