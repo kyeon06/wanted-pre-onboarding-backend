@@ -11,4 +11,4 @@ class Recuritment(models.Model):
     contents = models.TextField("채용내용")
     tech = models.CharField("사용기술", max_length=100)
 
-    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=True, null=True)

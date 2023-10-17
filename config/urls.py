@@ -18,4 +18,5 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     
     path('', include('recuritment.urls')), # 채용공고 관련 urls
+    path('', include('application.urls')),
 ]

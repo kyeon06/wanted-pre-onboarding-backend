@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'member',
     'company',
     'recuritment',
+    'application',
 ]
 
 MIDDLEWARE = [
